@@ -4,7 +4,7 @@ from typing import Dict, List
 import json
 
 from lib import PgConnect
-from examples.stg import EtlSetting, StgEtlSettingsRepository
+from stg import EtlSetting, StgEtlSettingsRepository
 from psycopg.rows import class_row
 from pydantic import BaseModel
 

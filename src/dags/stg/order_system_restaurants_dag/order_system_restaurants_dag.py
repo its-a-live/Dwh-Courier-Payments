@@ -3,9 +3,9 @@ import logging
 import pendulum
 from airflow.decorators import dag, task
 from airflow.models.variable import Variable
-from examples.stg.order_system_restaurants_dag.pg_saver import PgSaver
-from examples.stg.order_system_restaurants_dag.restaurant_loader import RestaurantLoader
-from examples.stg.order_system_restaurants_dag.restaurant_reader import RestaurantReader
+from stg.order_system_restaurants_dag.pg_saver import PgSaver
+from stg.order_system_restaurants_dag.restaurant_loader import RestaurantLoader
+from stg.order_system_restaurants_dag.restaurant_reader import RestaurantReader
 from lib import ConnectionBuilder, MongoConnect
 
 log = logging.getLogger(__name__)

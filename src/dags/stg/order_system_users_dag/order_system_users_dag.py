@@ -3,9 +3,9 @@ import logging
 import pendulum
 from airflow.decorators import dag, task
 from airflow.models.variable import Variable
-from examples.stg.order_system_users_dag.pg_saver import PgSaver
-from examples.stg.order_system_users_dag.users_loader import UsersLoader
-from examples.stg.order_system_users_dag.users_reader import UsersReader
+from stg.order_system_users_dag.pg_saver import PgSaver
+from stg.order_system_users_dag.users_loader import UsersLoader
+from stg.order_system_users_dag.users_reader import UsersReader
 from lib import ConnectionBuilder, MongoConnect
 
 log = logging.getLogger(__name__)

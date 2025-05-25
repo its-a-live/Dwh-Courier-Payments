@@ -1,9 +1,9 @@
 from datetime import datetime
 from logging import Logger
 
-from examples.stg import EtlSetting, StgEtlSettingsRepository
-from examples.stg.order_system_users_dag.pg_saver import PgSaver
-from examples.stg.order_system_users_dag.users_reader import UsersReader
+from stg import EtlSetting, StgEtlSettingsRepository
+from stg.order_system_users_dag.pg_saver import PgSaver
+from stg.order_system_users_dag.users_reader import UsersReader
 from lib import PgConnect
 from lib.dict_util import json2str
 
@@ -12,7 +12,7 @@ class UsersLoader:
     _LOG_THRESHOLD = 2
     _SESSION_LIMIT = 10000
 
-    WF_KEY = "example_ordersystem_users_origin_to_stg_workflow"
+    WF_KEY = "ordersystem_users_origin_to_stg_workflow"
     LAST_LOADED_TS_KEY = "last_loaded_ts"
 
     def __init__(self, collection_loader: UsersReader, pg_dest: PgConnect, pg_saver: PgSaver, logger: Logger) -> None:

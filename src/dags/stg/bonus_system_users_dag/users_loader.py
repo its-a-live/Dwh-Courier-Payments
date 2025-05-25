@@ -2,7 +2,7 @@ from pydantic import BaseModel
 from typing import List
 from psycopg import Connection
 from psycopg.rows import class_row
-from examples.stg import EtlSetting, StgEtlSettingsRepository
+from stg import EtlSetting, StgEtlSettingsRepository
 from lib import PgConnect
 from lib.dict_util import json2str
 from logging import Logger
@@ -53,7 +53,7 @@ class UsersDestRepository:
 
 # Логика загрузки пользователей
 class UsersLoader:
-    WF_KEY = "example_users_origin_to_stg_workflow"
+    WF_KEY = "users_origin_to_stg_workflow"
     LAST_LOADED_ID_KEY = "last_loaded_id"
     BATCH_LIMIT = 100  # Можно изменить размер пачки
 

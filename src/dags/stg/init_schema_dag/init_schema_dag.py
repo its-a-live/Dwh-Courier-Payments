@@ -3,7 +3,7 @@ import logging
 import pendulum
 from airflow.decorators import dag, task
 from airflow.models.variable import Variable
-from examples.stg.init_schema_dag.schema_init import SchemaDdl
+from stg.init_schema_dag.schema_init import SchemaDdl
 from lib import ConnectionBuilder
 
 log = logging.getLogger(__name__)
@@ -21,7 +21,7 @@ def stg_init_schema_dag():
     dwh_pg_connect = ConnectionBuilder.pg_conn("PG_WAREHOUSE_CONNECTION")
 
     # Забираем путь до каталога с SQL-файлами из переменных Airflow.
-    ddl_path = Variable.get("EXAMPLE_STG_DDL_FILES_PATH")
+    ddl_path = Variable.get("STG_DDL_FILES_PATH")
 
     # Объявляем таск, который создает структуру таблиц.
     @task(task_id="schema_init")

@@ -1,7 +1,7 @@
 import logging
 import pendulum
 from airflow.decorators import dag, task
-from examples.stg.couriers_dag.couriers_loader import CouriersLoader  # Обновленный импорт для вашего модуля
+from stg.couriers_dag.couriers_loader import CouriersLoader  # Обновленный импорт для вашего модуля
 from lib import ConnectionBuilder
 
 log = logging.getLogger(__name__)

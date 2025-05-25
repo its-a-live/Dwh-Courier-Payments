@@ -2,7 +2,7 @@ from pydantic import BaseModel
 from typing import List
 from psycopg import Connection
 from psycopg.rows import class_row
-from examples.stg import EtlSetting, StgEtlSettingsRepository
+from stg import EtlSetting, StgEtlSettingsRepository
 from lib import PgConnect
 from lib.dict_util import json2str
 from logging import Logger
@@ -62,7 +62,7 @@ class DeliveriesDestRepository:
 
 # Логика загрузки доставок
 class DeliveriesLoader:
-    WF_KEY = "example_deliveries_origin_to_stg_workflow"
+    WF_KEY = "deliveries_origin_to_stg_workflow"
     LAST_LOADED_OFFSET_KEY = "last_loaded_offset"
     BATCH_LIMIT = 150  # Размер пакета загрузки
 

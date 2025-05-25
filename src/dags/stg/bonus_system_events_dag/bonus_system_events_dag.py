@@ -2,7 +2,7 @@ import logging
 import pendulum
 from airflow.decorators import dag, task
 from lib import ConnectionBuilder
-from examples.stg.bonus_system_events_dag.events_loader import EventLoader
+from stg.bonus_system_events_dag.events_loader import EventLoader
 
 log = logging.getLogger(__name__)
 

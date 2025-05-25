@@ -1,7 +1,7 @@
 import logging
 import pendulum
 from airflow.decorators import dag, task
-from examples.stg.bonus_system_users_dag.users_loader import UsersLoader  # Обновляем импорт на новый модуль
+from stg.bonus_system_users_dag.users_loader import UsersLoader  # Обновляем импорт на новый модуль
 from lib import ConnectionBuilder
 
 log = logging.getLogger(__name__)
